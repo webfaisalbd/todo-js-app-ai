@@ -1,2 +1,2 @@
 ## TODO-APP
-<!-- inspired by ai -->
+- inspired by ai
