@@ -16,17 +16,17 @@ const createTodo = (todoId, todoValue) =>{
     <span> <button class='btn'><i class="fas fa-trash"></i></button> </span>
     `;
     todoLists.appendChild(todoElement);
-    showMessage();
+    showMessage('todo is added', 'success');
 }
 
 
 // show message
-const showMessage = () => {
-    messageElement.textContent = 'todo is created';
-    messageElement.classList.add('bg-success');
+const showMessage = (text, status) => {
+    messageElement.textContent = text;
+    messageElement.classList.add(`bg-${status}`);
     setTimeout(()=>{
         messageElement.textContent = '';
-        messageElement.classList.remove('bg-success')
+        messageElement.classList.remove(`bg-${status}`)
     },1000)
 }
 

@@ -86,3 +86,11 @@ input {
     border-left: 6px solid #04aa6d;
 }
 
+
+.bg-danger {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    color: black;
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336
+}
