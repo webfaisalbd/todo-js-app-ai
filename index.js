@@ -16,7 +16,7 @@ const createTodo = (todoId, todoValue) =>{
     <span> <button class='btn'><i class="fas fa-trash"></i></button> </span>
     `;
     todoLists.appendChild(todoElement);
-    showMessage('todo is added', 'success');
+    
 }
 
 
@@ -39,6 +39,14 @@ const addTodo = (event) => {
     // unique id
     const todoId = Date.now().toString();
     createTodo(todoId, todoValue);
+    showMessage('todo is added', 'success');
+
+    // adding todo to local storage
+    const todos = localStorage.getItem('mytodos') ? JSON.parse(localStorage.getItem('mytodos')) : [];
+    todos.push({todoId,todoValue});
+    localStorage.setItem('mytodos', JSON.stringify(todos));
+
+    todoInput.value = '';
 
 }
 
