@@ -78,3 +78,11 @@ input {
     background-color: #111;
 }
 
+.bg-success {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    color: black;
+    background-color: green;
+    border-left: 6px solid #04aa6d;
+}
+
