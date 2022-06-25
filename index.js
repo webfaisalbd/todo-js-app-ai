@@ -29,9 +29,12 @@ const deleteTodo = (event) => {
     todoLists.removeChild(selectedTodo);
     showMessage('todo is deleted', 'danger');
 
-    const todoId = selectedTodo.id;
     
-}
+    let todos = getTodosFromLocalStorage();
+    todos = todos.filter((todo) =>  todo.todoId != selectedTodo.id);
+    localStorage.setItem('mytodos', JSON.stringify(todos));
+
+};
 
 
 // show message
@@ -46,8 +49,8 @@ const showMessage = (text, status) => {
 
 
 // getTodosFromLocalStorage
-const getTodosFromLocalStorage = () =>{
-   return  localStorage.getItem('mytodos') ? JSON.parse(localStorage.getItem('mytodos')) : [];
+const getTodosFromLocalStorage = () => {
+    return localStorage.getItem('mytodos') ? JSON.parse(localStorage.getItem('mytodos')) : [];
 }
 
 
