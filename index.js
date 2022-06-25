@@ -27,6 +27,7 @@ const deleteTodo = (event) => {
     const selectedTodo = event.target.parentElement.parentElement.parentElement;
     // console.log(selectedTodo);
     todoLists.removeChild(selectedTodo);
+    showMessage('todo is deleted', 'danger')
 }
 
 
