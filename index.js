@@ -27,7 +27,10 @@ const deleteTodo = (event) => {
     const selectedTodo = event.target.parentElement.parentElement.parentElement;
     // console.log(selectedTodo);
     todoLists.removeChild(selectedTodo);
-    showMessage('todo is deleted', 'danger')
+    showMessage('todo is deleted', 'danger');
+
+    const todoId = selectedTodo.id;
+    
 }
 
 
@@ -41,6 +44,13 @@ const showMessage = (text, status) => {
     }, 1000)
 }
 
+
+// getTodosFromLocalStorage
+const getTodosFromLocalStorage = () =>{
+   return  localStorage.getItem('mytodos') ? JSON.parse(localStorage.getItem('mytodos')) : [];
+}
+
+
 // addTodo
 const addTodo = (event) => {
     event.preventDefault();
@@ -53,7 +63,7 @@ const addTodo = (event) => {
     showMessage('todo is added', 'success');
 
     // adding todo to local storage
-    const todos = localStorage.getItem('mytodos') ? JSON.parse(localStorage.getItem('mytodos')) : [];
+    const todos = getTodosFromLocalStorage();
     todos.push({ todoId, todoValue });
     localStorage.setItem('mytodos', JSON.stringify(todos));
 
